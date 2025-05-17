@@ -183,8 +183,9 @@ Add the following functionality to the application, in any way you see fit. The 
    - Added input validation for the form when creating a new subscription
    - Added Material UI to replace Bootstrap. Styled components are used from Material UI for the look and feel.
    - A new endpoint PATCH /subscriptions/<sub_id>/pay has been added. This endpoint marks a subscription as paid and moves its renewal date one month forward, handling month and day rollovers correctly. Users can only pay when the renewal date is today for simplicity
-   - The Reminders view shows all upcoming reminders for active subscriptions using the /reminders endpoint that fetches all reminders
+   - The Reminders view shows all upcoming reminders for active subscriptions using the /reminders endpoint that fetches all reminders.
    - The backend uses a SubscriptionInstance table to track each subscription's payment status and renewal periods. Each time a subscription is created, a SubscriptionInstance is created for the first period. When a payment is made, the current instance is marked as paid and a new instance is created for the next period. This enables robust tracking of recurring payments and payment history.
+   - Also added a reminders table to keep track of reminders, it was too limiting to keep it in a column in the subscription table
 
 7. **Known Limitations / Future Work**
 - A worker that sends all the reminders is missing here but could work by polling the reminders table to check if send_date has passed and sent is still false.
