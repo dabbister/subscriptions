@@ -248,9 +248,11 @@ const Subscriptions = () => {
                                                     Current Period: {sub.current_period_start} to {sub.current_period_end}
                                                 </Typography>
                                             )}
+                                            {!sub.canceled && (
                                             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                                                 Payment Status: {sub.payment_status ? sub.payment_status.charAt(0).toUpperCase() + sub.payment_status.slice(1) : 'Unknown'}
                                             </Typography>
+                                            )}
                                             <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                                                 Category: {sub.category || 'Uncategorized'}
                                             </Typography>
