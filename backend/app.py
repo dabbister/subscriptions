@@ -260,8 +260,6 @@ def update_subscription(sub_id):
             'id': sub.id,
             'service_name': sub.service_name,
             'cost': sub.cost,
-            'renewal_date': renewal_date,
-            'payment_status': sub.payment_status,
             'category': sub.category,
             'canceled': sub.canceled
         })
